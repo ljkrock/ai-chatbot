@@ -3,7 +3,7 @@ import {
   extractReasoningMiddleware,
   wrapLanguageModel,
 } from 'ai';
-import { xai } from '@ai-sdk/xai';
+// import { xai } from '@ai-sdk/xai';
 import { isTestEnvironment } from '../constants';
 import {
   artifactModel,
@@ -11,6 +11,13 @@ import {
   reasoningModel,
   titleModel,
 } from './models.test';
+
+import { createOpenAI } from '@ai-sdk/openai';
+
+const openai = createOpenAI({
+  // custom settings, e.g.
+  baseURL: 'https://api.chatanywhere.tech', // strict mode, enable when using the OpenAI API
+});
 
 export const myProvider = isTestEnvironment
   ? customProvider({
@@ -23,15 +30,15 @@ export const myProvider = isTestEnvironment
     })
   : customProvider({
       languageModels: {
-        'chat-model': xai('grok-2-1212'),
+        'chat-model': openai('gpt-3.5-turbo'),
         'chat-model-reasoning': wrapLanguageModel({
-          model: xai('grok-3-mini-beta'),
+          model: openai('gpt-3.5-turbo'),
           middleware: extractReasoningMiddleware({ tagName: 'think' }),
         }),
-        'title-model': xai('grok-2-1212'),
-        'artifact-model': xai('grok-2-1212'),
+        'title-model': openai('gpt-3.5-turbo'),
+        'artifact-model': openai('gpt-3.5-turbo'),
       },
       imageModels: {
-        'small-model': xai.image('grok-2-image'),
+        
       },
     });
