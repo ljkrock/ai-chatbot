@@ -16,7 +16,7 @@ import { createOpenAI } from '@ai-sdk/openai';
 
 const openai = createOpenAI({
   // custom settings, e.g.
-  baseURL: 'https://api.chatanywhere.tech', // strict mode, enable when using the OpenAI API
+  baseURL: 'https://openrouter.ai/api/v1', // strict mode, enable when using the OpenAI API
 });
 
 export const myProvider = isTestEnvironment
@@ -30,13 +30,13 @@ export const myProvider = isTestEnvironment
     })
   : customProvider({
       languageModels: {
-        'chat-model': openai('gpt-3.5-turbo'),
+        'chat-model': openai('gpt-4.1'),
         'chat-model-reasoning': wrapLanguageModel({
-          model: openai('gpt-3.5-turbo'),
+          model: openai('gpt-4.1'),
           middleware: extractReasoningMiddleware({ tagName: 'think' }),
         }),
-        'title-model': openai('gpt-3.5-turbo'),
-        'artifact-model': openai('gpt-3.5-turbo'),
+        'title-model': openai('gpt-4.1'),
+        'artifact-model': openai('gpt-4.1'),
       },
       imageModels: {
         

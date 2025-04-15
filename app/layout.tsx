@@ -7,8 +7,8 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'Next.js Chatbot Template',
-  description: 'Next.js chatbot template using the AI SDK.',
+  title: 'GPT-4.1 AI Assistant | Smarter, Faster, with 1M Token Context Support',
+  description: 'Experience the power of GPT-4.1—OpenAI’s most advanced AI model with superior coding, task execution, and 1 million token long-context capabilities. High performance, low latency, and production-ready for creators, developers, and businesses. Try it now!',
 };
 
 export const viewport = {
