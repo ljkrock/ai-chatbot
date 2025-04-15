@@ -31,6 +31,11 @@ export const myProvider = isTestEnvironment
   : customProvider({
       languageModels: {
         'gpt-4.1': openai('gpt-4.1'),
+        
+        'gpt-4.1-mini': openai('gpt-4.1-mini'),
+        'gpt-4.1-nano': openai('gpt-4.1-nano'),
+
+
         // 'chat-model-reasoning': wrapLanguageModel({
         //   model: openai('gpt-4.1'),
         //   middleware: extractReasoningMiddleware({ tagName: 'think' }),

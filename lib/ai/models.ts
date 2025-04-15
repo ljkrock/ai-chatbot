@@ -12,9 +12,14 @@ export const chatModels: Array<ChatModel> = [
     name: 'gpt-4.1',
     description: 'Experience the power of GPT-4.1',
   },
-  // {
-  //   id: 'chat-model-reasoning',
-  //   name: 'Reasoning model',
-  //   description: 'Uses advanced reasoning',
-  // },
+  {
+    id: 'gpt-4.1-mini',
+    name: 'gpt-4.1 Mini',
+    description: 'Experience the power of GPT-4.1 Mini',
+  },
+  {
+    id: 'gpt-4.1-nano',
+    name: 'gpt-4.1 Nano',
+    description: 'Experience the power of GPT-4.1 Nano',
+  },
 ];
